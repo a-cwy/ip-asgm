@@ -18,6 +18,7 @@ def remove_noise(img):
   return median_filtered
 
 def denoise(img):
+  img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
   img = remove_black(img)
   img = remove_noise(img)
   return img
@@ -60,6 +61,6 @@ def extract_roi(img):
   cv.rectangle(img_ws_bbox, bbox[0], bbox[1], (0, 255, 0), 2)
 
   img_roi = img[bbox[0][1]:bbox[1][1], bbox[0][0]:bbox[1][0], :]
-  img_roi = cv.resize(img_roi, (128, 128), interpolation=cv.INTER_AREA)
+  img_roi = cv.resize(img_roi, (256, 256), interpolation=cv.INTER_AREA)
 
   return img_roi
