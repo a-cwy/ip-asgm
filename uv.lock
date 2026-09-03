@@ -286,6 +286,8 @@ wheels = [
 
 [[package]]
 name = "opencv-python-headless"
+version = "5.0.0.93"
+source = { registry = "https://pypi.org/simple" }
 
 [[package]]
 name = "packaging"
